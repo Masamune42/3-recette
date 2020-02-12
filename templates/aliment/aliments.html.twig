@@ -2,9 +2,16 @@
 
 {% block title %}Hello AlimentController!{% endblock %}
 
-{% block monTitre %}Liste de tous les aliments{% endblock %}
+{% block monTitre %}
+    Liste de tous les aliments
+    {% if isCalorie %}
+        avec moins de 50 calories
+    {% endif %}
+{% endblock %}
 {% block body %}
-    <a href="{{ path('alimentsParCalorie', {'calorie': 50}) }}">Aliments avec moins de 50 calories au 100g</a>
+    <a href="{{ path('aliments')}}" class="btn btn-primary">Tous</a>
+    <a href="{{ path('alimentsParCalorie', {'calorie': 50}) }}" class="btn btn-primary">Aliments avec moins de 50 calories au 100g</a>
+    <a href="{{ path('alimentsParGlucide', {'glucide': 5}) }}" class="btn btn-primary">Aliments avec moins de 5 glucides au 100g</a>
     <div class="row">
         {% for aliment in aliments %}
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
