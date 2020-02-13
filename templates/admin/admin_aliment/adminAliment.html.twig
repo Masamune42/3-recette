@@ -7,6 +7,13 @@
 {% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
     <a class="btn btn-success" href="{{ path('admin_creation') }}">Ajouter</a>
     <table class="table">
         <tr class="table-primary">
@@ -21,7 +28,7 @@
         </tr>
         {% for aliment in aliments %}
             <tr>
-                <td style="width: 10%"><img src="{{ asset('images/' ~ aliment.image) }}" class="perso_imgAlimentAdmin">
+                <td style="width: 10%"><img src="{{ asset('images/aliments/' ~ aliment.image) }}" class="perso_imgAlimentAdmin">
                 </td>
                 <td><strong>{{ aliment.nom }}</strong></td>
                 <td>{{ aliment.prix }}</td>
@@ -32,7 +39,8 @@
                 <td>
                     <a class="btn btn-secondary"
                        href="{{ path('admin_modification', {'id': aliment.id}) }}">Modifier</a>
-                    <form onsubmit="return confirm('Confirmer la suppression ?')" method="post" style="display:inline-block" action="{{ path('admin_suppression', {'id': aliment.id}) }}">
+                    <form onsubmit="return confirm('Confirmer la suppression ?')" method="post"
+                          style="display:inline-block" action="{{ path('admin_suppression', {'id': aliment.id}) }}">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{ csrf_token('SUP' ~ aliment.id) }}">
                         <input type="submit" class="btn btn-danger" value="Supprimer">

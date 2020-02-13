@@ -14,7 +14,7 @@ class AppFixtures extends Fixture
         $a1->setNom("Carotte")
             ->setCalorie(36)
             ->setPrix(1.80)
-            ->setImage("aliments/carotte.png")
+            ->setImage("carotte.png")
             ->setProteine(0.77)
             ->setGlucide(6.45)
             ->setLipide(0.26);
@@ -24,7 +24,7 @@ class AppFixtures extends Fixture
         $a2->setNom("Patate")
             ->setPrix(1.50)
             ->setCalorie(80)
-            ->setImage("aliments/patate.jpg")
+            ->setImage("patate.jpg")
             ->setProteine(1.80)
             ->setGlucide(16.7)
             ->setLipide(0.34);
@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
         $a3->setNom("Tomate")
             ->setPrix(2.30)
             ->setCalorie(18)
-            ->setImage("aliments/tomate.png")
+            ->setImage("tomate.png")
             ->setProteine(0.86)
             ->setGlucide(2.26)
             ->setLipide(0.24);
@@ -44,7 +44,7 @@ class AppFixtures extends Fixture
         $a4->setNom("Pomme")
             ->setCalorie(52)
             ->setPrix(2.35)
-            ->setImage("aliments/pomme.png")
+            ->setImage("pomme.png")
             ->setProteine(0.25)
             ->setGlucide(11.6)
             ->setLipide(0.25);
