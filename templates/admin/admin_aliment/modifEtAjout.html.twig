@@ -15,10 +15,11 @@
     <div class="row">
         <div class="col-6">
             {% if modification %}
-            <img src="{{ asset('images/aliments' ~ aliment.image) }}" style="width: 25%;">
+            <img src="{{ asset('images/aliments/' ~ aliment.image) }}" style="width: 25%;">
             {% endif %}
             <div> {{ form_row(form.imageFile) }}</div>
             <div>{{ form_row(form.nom, {"attr" : {'class' :'text-danger bg-success'}, "label" : "Nom de l'aliment"}) }}</div>
+            <div> {{ form_row(form.type) }}</div>
         </div>
         <div class="col-6">
             {{ form_widget(form) }}
